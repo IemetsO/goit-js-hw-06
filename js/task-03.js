@@ -16,9 +16,11 @@ const images = [
 
 const list = document.querySelector(".gallery");
 
-const image = images.forEach(function ({url,alt}) {
-    list.insertAdjacentHTML("beforeend", `<li class='gallery-item'><img class='gallery-image' src='${url}' alt='${alt}'>
-    </li>`
-      )
-    })
+// const image = images.forEach(function ({url,alt}) {
+//     list.insertAdjacentHTML("beforeend", `<li class='gallery-item'><img class='gallery-image' src='${url}' alt='${alt}'>
+//     </li>`
+//       )
+//     })
   
+const image = images.map((image) => `<li class='gallery-item'><img class='gallery-image' src='${image.url}' alt='${image.alt}'> </li>`).join("")
+list.insertAdjacentHTML("beforeend", image)
