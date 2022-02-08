@@ -20,4 +20,3 @@ const ingredients = [
 const ingredient = ingredients.map((ingredient) => `<li class ="item">${ingredient}</li>`).join("");
 const list = document.querySelector("#ingredients");
 list.insertAdjacentHTML("beforeend", ingredient);
-
