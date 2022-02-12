@@ -2,10 +2,12 @@ const validation = document.querySelector("#validation-input");
 
 validation.addEventListener("blur", verification);
 function verification(event) {
-  const userInputLength = event.currentTarget.value.length;
+  const userInputLength = Number(event.currentTarget.value.length);
 
-
-  if (userInputLength == validation.getAttribute("data-length")) {
+const reqLength = Number(validation.dataset.length);
+ 
+  if (userInputLength === reqLength) {
+   
     validation.classList.add("valid");
     validation.classList.remove("invalid");
   } else {
